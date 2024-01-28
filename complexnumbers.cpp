@@ -7,15 +7,15 @@ private:
     double imag;
 
 public:
-    // Constructors
+    // constructors
     ComplexNumber() : real(0.0), imag(0.0) {}
     ComplexNumber(double realPart, double imagPart) : real(realPart), imag(imagPart) {}
 
-    // Getters
+    // getters
     double getReal() const { return real; }
     double getImaginary() const { return imag; }
 
-    // Operations
+    // operations
     ComplexNumber operator+(const ComplexNumber& other) const {
         return ComplexNumber(real + other.real, imag + other.imag);
     }
@@ -54,13 +54,13 @@ public:
     }
 };
 
-// Function to print a complex number
+// the function to print a complex number
 void printComplexNumber(const ComplexNumber& num) {
     std::cout << num.getReal() << " + " << num.getImaginary() << "i";
 }
 
 int main() {
-    // Test the ComplexNumber class
+    // testing the ComplexNumber class
     ComplexNumber num1(3.0, 4.0);
     ComplexNumber num2(1.5, -2.5);
 
@@ -72,7 +72,7 @@ int main() {
     printComplexNumber(num2);
     std::cout << std::endl;
 
-    // Test operations
+    // test operations
     ComplexNumber sum = num1 + num2;
     std::cout << "Sum: ";
     printComplexNumber(sum);
@@ -93,7 +93,7 @@ int main() {
     printComplexNumber(quotient);
     std::cout << std::endl;
 
-    // Test other methods
+    // testing other methods
     ComplexNumber conjugateNum = num1.conjugate();
     std::cout << "Conjugate of Number 1: ";
     printComplexNumber(conjugateNum);
