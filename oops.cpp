@@ -1,17 +1,30 @@
- #include <iostream>
- using namespace std;
-int value;
-void askUser(){
-                  cout << "Please type a number between 0 and 100\n";
-                  cin >> value;
+#include <iostream>
+#include <string>
+using namespace std;
+
+int askUser(int& value) {
+    cout << "Please type a number: ";
+    cin >> value;
+    return value;
 }
-int main(){ 
-	askUser();
-	 if(value>100 || value<0){
-		cout << "Your value is invalid\n";
-		askUser();
-	 }else{
-		cout << "The value chosen by the user is " << value << endl;
-		return 0;
-       	}
- }
+
+string askUser(string& value) {
+    cout << "Please type a string: ";
+    cin.ignore(); // Ignore previous newline character
+    getline(cin, value);
+    return value;
+}
+
+int main() {
+    int intValue;
+    string stringValue;
+
+    askUser(intValue);
+    cout << "The integer value chosen by the user is " << intValue << endl;
+
+    askUser(stringValue);
+    cout << "The string value chosen by the user is \"" << stringValue << "\"" << endl;
+
+    return 0;
+}
+
